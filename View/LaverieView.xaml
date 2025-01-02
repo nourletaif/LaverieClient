@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LaverieClient.View.LaverieView"
+             Title="LaverieView"
+             BackgroundColor="Black">
+
+    <CollectionView ItemsSource="{Binding Laveries}"
+                    VerticalOptions="FillAndExpand"
+                    Margin="10">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame CornerRadius="10"
+                       BorderColor="Gray"
+                       BackgroundColor="#1E1E1E"
+                       Padding="10"
+                       Margin="5">
+                    <VerticalStackLayout>
+                        <Label Text="{Binding Name}"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="White" />
+                        <Label Text="{Binding Adress}"
+                               FontSize="14"
+                               TextColor="#CCCCCC" />
+                        <Label Text="Machines Available: {Binding Machines.Count}"
+                               FontSize="12"
+                               TextColor="#AAAAAA" />
+                    </VerticalStackLayout>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+</ContentPage>
